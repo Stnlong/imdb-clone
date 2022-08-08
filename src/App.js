@@ -67,7 +67,7 @@ const App = () => {
                         onClick={handleGetMovies}
                     />
                 </Container>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{ flexGrow: 1, mx: 1 }}>
                     {movies?.length > 0
                         ? (
                             <Grid container spacing={1} >
