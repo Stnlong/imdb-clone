@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
           {movie.Year}
         </Typography>
         <Typography variant="h5" component="div">
-        <img src={movie.Poster !== 'N/A' ? movie.Poster : ''} alt={movie.Title} />
+          <img src={movie.Poster !== 'N/A' ? movie.Poster : ''} alt={movie.Title} />
         </Typography>
         <Typography variant="body2">
           {movie.Title}

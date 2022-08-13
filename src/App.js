@@ -4,7 +4,7 @@ import { getUser } from "./redux/ducks/user";
 import { getMovies } from "./redux/ducks/movies";
 
 import SearchInput from "./common/SearchInput";
-import MovieCard from './MovieCard';
+import MovieCard from './components/MovieCard';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -30,9 +30,13 @@ const App = () => {
     // const handleGetUser = () => {
     //     dispatch(getUser());
     // }
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+    }
 
-    const handleGetMovies = (title) => {
-        dispatch(getMovies(title));
+    const handleGetMovies = (event) => {
+        event.preventDefault();
+        dispatch(getMovies(searchTerm));
     }
 
     // empty array because is the dependency array, any vars passed in will trigger the useEffect
@@ -50,6 +54,8 @@ const App = () => {
                 bgcolor: 'black',
                 pt: 8,
                 pb: 6,
+                width: 'auto',
+                height: '100%',
             }}>
                 <Container maxWidth="lg">
                     <Typography
@@ -63,11 +69,11 @@ const App = () => {
                     </Typography>
                     <SearchInput 
                         value={searchTerm}
-                        onChange={setSearchTerm}
+                        onChange={handleChange}
                         onClick={handleGetMovies}
                     />
                 </Container>
-                <Box sx={{ flexGrow: 1, mx: 1 }}>
+                <Box sx={{ flexGrow: 1, mx: 1, maxHeight: '100%' }}>
                     {movies?.length > 0
                         ? (
                             <Grid container spacing={1} >

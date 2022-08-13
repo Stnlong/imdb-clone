@@ -7,8 +7,7 @@ TODO:
 now:
 1. create a nav bar with user info. implement logging in and out
 2. create css classes instead of inline
-3. move MovieCard into components folder
-4. fix pressing enter on search input
+3. fix css of movie cards
 
 later:
 1. create backend with db to store users
