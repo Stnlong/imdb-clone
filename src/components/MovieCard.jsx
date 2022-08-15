@@ -4,25 +4,33 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
 
 const MovieCard = ({ movie }) => {
   return (
-    <Card sx={{ minWidth: 200, mt: 1 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {movie.Year}
-        </Typography>
-        <Typography variant="h5" component="div">
-          <img src={movie.Poster !== 'N/A' ? movie.Poster : ''} alt={movie.Title} />
-        </Typography>
-        <Typography variant="body2">
-          {movie.Title}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Details</Button>
-      </CardActions>
-    </Card>
+    <Grid item key={movie} xs={12} sm={6} md={4}>
+        <Card
+          sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        >
+          <CardMedia
+              component="img"
+              image={movie.Poster !== 'N/A' ? movie.Poster : ''}
+              alt={movie.Title}
+          />
+          <CardContent sx={{ flexGrow: 1 }}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {movie.Title}
+              </Typography>
+              <Typography>
+                {movie.Type}
+              </Typography>
+          </CardContent>
+          <CardActions>
+              <Button size="small">View</Button>
+          </CardActions>
+        </Card>
+    </Grid>
   )
 }
 

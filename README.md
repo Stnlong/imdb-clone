@@ -6,8 +6,7 @@ TODO:
 
 now:
 1. create a nav bar with user info. implement logging in and out
-2. create css classes instead of inline
-3. fix css of movie cards
+2. split out all the components in App.js
 
 later:
 1. create backend with db to store users

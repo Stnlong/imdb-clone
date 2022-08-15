@@ -6,6 +6,9 @@ export const getMovies = (title) => ({
     title
 });
 
+/* 
+    Set the list of movies based on API search results
+ */
 export const setMovies = (movies) => ({
     type: SET_MOVIES,
     movies

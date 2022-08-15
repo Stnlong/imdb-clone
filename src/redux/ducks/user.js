@@ -11,12 +11,12 @@ export const setUser = (user) => ({
 });
 
 const initialState = {
-    user: { name: 'Stephen' }
+    user: null
 };
 
 const user = (state = initialState, action) => {
     switch (action.type) {
-        // don't need get since the saga watcher is doing it automatically
+        // don't need get since the saga watcher is handling it
         // case GET_USER:
         //     return { ...state.user };
         case SET_USER:

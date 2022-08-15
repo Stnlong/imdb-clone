@@ -8,24 +8,24 @@ import InputLabel from '@mui/material/InputLabel';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 
-const SearchInput = ({ value, onChange, onClick }) => {
+const SearchInput = ({ value, onChange, onSubmit}) => {
   return (
-    <FormControl fullWidth onSubmit={onClick}>
+    <FormControl fullWidth onSubmit={onSubmit}>
       <Paper
         component="form"
         elevation={0} 
         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '50%', ml: '25%' }}
-    >
-      <InputBase
-          sx={{ ml: 1, flex: 1 }}
-          placeholder="Search Movies"
-          inputProps={{ 'aria-label': 'search movies' }} // attributes applied to the input
-          value={value}
-          onChange={onChange}
+      >
+        <InputBase
+            sx={{ ml: 1, flex: 1 }}
+            placeholder="Search Movies"
+            inputProps={{ 'aria-label': 'search movies' }} // attributes applied to the input
+            value={value}
+            onChange={onChange}
         />
         <IconButton sx={{ p: '10px' }} aria-label="search" type="submit">
-          <SearchIcon />
-      </IconButton>
+            <SearchIcon />
+        </IconButton>
       </Paper>
     </FormControl>
   )
